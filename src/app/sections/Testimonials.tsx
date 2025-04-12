@@ -1,52 +1,55 @@
+import React from 'react';
 import Image from 'next/image';
 
 const testimonials = [
   {
-    name: 'María García',
-    text: 'Gracias a los tratamientos, he recuperado la movilidad y puedo volver a hacer deporte.',
-    image: '/images/testimonios/testimonio1.jpg'
+    name: 'María López',
+    image: '/images/testimonios/testimonio1.png',
+    text: 'El tratamiento ha sido increíble. Después de meses de dolor, puedo volver a hacer vida normal. Recomendaría este centro a cualquiera que sufra problemas de espalda.',
+    rating: 5
   },
   {
-    name: 'Juan Pérez',
-    text: 'El equipo profesional y el trato personalizado han sido clave en mi recuperación.',
-    image: '/images/testimonios/testimonio2.jpg'
+    name: 'Juan Rodríguez',
+    image: '/images/testimonios/testimonio2.png',
+    text: 'Acudí tras una lesión deportiva y el equipo ha sido muy profesional. La mejoría fue notable desde las primeras sesiones. Sin duda, seguiré confiando en ellos.',
+    rating: 5
   },
   {
     name: 'Ana Martínez',
-    text: 'Excelente atención y resultados. Totalmente recomendado para cualquier problema físico.',
-    image: '/images/testimonios/testimonio3.jpg'
+    image: '/images/testimonios/testimonio3.png',
+    text: 'Excelente atención personalizada. Me explicaron todo el proceso de tratamiento y resolvieron todas mis dudas. Los resultados hablan por sí solos.',
+    rating: 5
   }
 ];
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-primary w-full" id="testimonials" style={{backgroundColor: '#87d2d2'}}>
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-          Lo que dicen nuestros pacientes
-        </h2>
+        <h2 className="text-4xl font-serif font-bold text-center mb-12">Testimonios</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-background rounded-lg p-6 shadow-[0_4px_12px_rgba(255,255,255,0.15)] hover:shadow-[0_8px_24px_rgba(255,255,255,0.25)] transition-shadow"
-            >
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
               <div className="flex items-center mb-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
-                    fill
-                    className="object-cover"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {testimonial.name}
-                </h3>
+                <div>
+                  <h3 className="text-xl font-bold">{testimonial.name}</h3>
+                  <div className="flex text-yellow-400">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <span key={i}>★</span>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <p className="text-gray-700 italic">
-                "{testimonial.text}"
-              </p>
+              <p className="text-gray-700 italic">"{testimonial.text}"</p>
             </div>
           ))}
         </div>
