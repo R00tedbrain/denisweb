@@ -14,7 +14,7 @@ export default function FisioterapiaPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-center">
           <div>
             <Image
-              src="/images/servicios/fisioquiro.png"
+              src="/DennysFisio/images/servicios/fisioquiro.png"
               alt="Fisioterapia y Quiropraxia"
               width={600}
               height={450}
