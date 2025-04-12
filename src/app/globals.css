@@ -1,26 +1,52 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 253, 248, 236;
+  --background-end-rgb: 253, 248, 236;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+/* Forzar color de fondo para todas las secciones */
+html, body, #__next, main {
+  background-color: #fdf8ec !important;
+}
+
+section {
+  width: 100% !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-gray-700 hover:text-primary transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-light transition-colors;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-light/10 transition-colors;
+  }
+}
+
+/* Estilos para las secciones */
+section {
+  @apply scroll-mt-16;
 }
