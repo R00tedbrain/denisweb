@@ -29,7 +29,7 @@ export default function ForWho() {
     },
     {
       title: "Niños",
-      image: "/images/tratamientos/ninos.png",
+      image: "/images/tratamientos/niños.png",
       description: "Tratamientos adaptados para los más pequeños",
       href: "/para-quien/ninos"
     }
@@ -43,15 +43,11 @@ export default function ForWho() {
           {categories.map((category, index) => (
             <div key={index} className="bg-gray-50 rounded-lg overflow-hidden shadow-lg">
               <Link href={category.href}>
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={category.image}
-                    alt={category.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
+                <img 
+                  src={category.image} 
+                  alt={category.title} 
+                  className="w-full h-48 object-cover"
+                />
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-3">{category.title}</h3>
                   <p className="text-gray-700">{category.description}</p>
