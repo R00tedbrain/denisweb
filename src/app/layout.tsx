@@ -10,6 +10,14 @@ const playfair = Playfair_Display({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Dennys Calizaya - Fisioterapia y Quiropráctica",
   description: "Servicios profesionales de fisioterapia y quiropráctica a domicilio o en consulta",
+  icons: {
+    icon: [
+      { url: '/favidenis.png' },
+      { url: '/favidenis.png', type: 'image/png' }
+    ],
+    shortcut: '/favidenis.png',
+    apple: '/favidenis.png',
+  },
 };
 
 export default function RootLayout({

@@ -35,7 +35,7 @@ export default function About() {
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="relative h-48 w-full bg-gray-200 mb-4 rounded-lg overflow-hidden">
               <Image
-                src="/images/servicios/fisioquiro.png"
+                src="/images/clinica/instalaciones1.png"
                 alt="Nuestras instalaciones"
                 width={400}
                 height={300}
@@ -54,7 +54,7 @@ export default function About() {
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="relative h-48 w-full bg-gray-200 mb-4 rounded-lg overflow-hidden">
               <Image
-                src="/images/servicios/rehabilitadeporte.png"
+                src="/images/clinica/equipopro.png"
                 alt="Nuestro equipo"
                 width={400}
                 height={300}
